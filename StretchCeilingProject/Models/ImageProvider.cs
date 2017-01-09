@@ -7,5 +7,9 @@ namespace StretchCeilingProject.Models
 {
     public class ImageProvider
     {
+        public byte[] GetImage(Guid id)
+        {
+            return null;
+        }
     }
 }

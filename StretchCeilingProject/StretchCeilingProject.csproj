@@ -155,6 +155,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -170,6 +171,9 @@
     <Content Include="Views\Layouts\DefaultLayout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="Views\Home\Price.cshtml" />
+    <Content Include="Views\Home\Description.cshtml" />
+    <Content Include="Views\Home\Contacts.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -179,6 +183,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Image\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\StretchCeilingProject.Common\StretchCeilingProject.Common.csproj">
+      <Project>{1C491725-A9E4-43FA-A558-D0D58B939BFE}</Project>
+      <Name>StretchCeilingProject.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

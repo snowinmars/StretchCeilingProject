@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace StretchCeilingProject.Common
 {
-    public class Constant
+    public static class Constant
     {
+        static Constant()
+        {
+            CarouselImagesIds = new []
+            {
+                new Guid(0,0,0,0,0,0,0,0,0,0,1),
+                new Guid(0,0,0,0,0,0,0,0,0,0,2),
+                new Guid(0,0,0,0,0,0,0,0,0,0,3),
+                new Guid(0,0,0,0,0,0,0,0,0,0,4),
+            };
+        }
+
+        public static IEnumerable<Guid> CarouselImagesIds;
     }
 }
