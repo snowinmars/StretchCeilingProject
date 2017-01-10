@@ -6,3 +6,10 @@
 <h2>Index</h2>
 
 Hello world
+
+@using (Html.BeginForm("Add", "Image", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <input type="file" name="file"/>
+
+    <input type="submit" value="Go"/>
+}

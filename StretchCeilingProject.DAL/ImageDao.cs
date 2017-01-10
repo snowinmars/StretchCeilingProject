@@ -35,13 +35,14 @@ where
                 throw new InvalidOperationException($"Can't add item with id {item.Id}: data layer validation failed");
             }
 
-            SqlCommand sqlInsertCommand = new SqlCommand(ImageDao.InsertCommand);
-
-            sqlInsertCommand.Parameters.AddWithValue("@id", item.Id);
-            sqlInsertCommand.Parameters.AddWithValue("@content", item.Content);
 
             using (SqlConnection sqlConnection = new SqlConnection(Constant.ConnectionString))
             {
+                SqlCommand sqlInsertCommand = new SqlCommand(ImageDao.InsertCommand, sqlConnection);
+
+                sqlInsertCommand.Parameters.AddWithValue("@id", item.Id);
+                sqlInsertCommand.Parameters.AddWithValue("@content", item.Content);
+
                 sqlConnection.Open();
                 sqlInsertCommand.ExecuteNonQuery();
                 sqlConnection.Close();
@@ -91,7 +92,8 @@ where
 
         private bool IsValidImage(Image item)
         {
-            if (this.Get(item.Id).Content.Length == 0)
+            // if I found something
+            if (this.Get(item.Id).Content.Length != 0)
             {
                 return false;
             }
