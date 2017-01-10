@@ -13,7 +13,7 @@ namespace StretchCeilingProject.DAL
 
         public Image Get(Guid id)
         {
-            return null;
+            return new Image(new byte[0]);
         }
 
         public IEnumerable<Image> GetByFilter()

@@ -8,38 +8,36 @@ namespace StretchCeilingProject.Controllers
 {
     public class ImageController : Controller
     {
-        public ImageController(ImageLogic imageProvider)
+        public ImageController(ImageLogic imageLogic)
         {
-            this.ImageProvider = imageProvider;
+            this.ImageLogic = imageLogic;
         }
 
-        private ImageLogic ImageProvider { get; }
+        private ImageLogic ImageLogic { get; }
 
         public EmptyResult Add(byte[] content)
         {
             Image image = new Image(content);
 
-            this.ImageProvider.Add(image);
+            this.ImageLogic.Add(image);
 
             return new EmptyResult();
         }
 
         public ActionResult Get(Guid? imageId)
         {
-            if (imageId == null ||
-                imageId == default(Guid))
+            if (!imageId.HasValue ||
+                imageId.Value == default(Guid))
             {
                 return new FileContentResult(new byte[0], Constant.MIMEType);
             }
 
-            byte[] content = new byte[0];
+            Image content = this.ImageLogic.Get(imageId.Value);
 
-            var result = new FileContentResult(content, Constant.MIMEType)
+            return new FileContentResult(content.Content, Constant.MIMEType)
             {
                 FileDownloadName = imageId.ToString()
             };
-
-            return result;
         }
     }
 }
