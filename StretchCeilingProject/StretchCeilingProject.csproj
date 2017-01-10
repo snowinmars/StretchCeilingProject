@@ -77,6 +77,18 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Web.Common, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Web.Common.3.2.3.0\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.MVC5.3.2.1.0\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="SandS.Algorithm.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SandS.Algorithm.Common.2.0.1.02\lib\SandS.Algorithm.Common.dll</HintPath>
       <Private>True</Private>
@@ -104,6 +116,10 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Web.Razor">
@@ -153,13 +169,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\ImageProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -183,12 +199,21 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
     <Folder Include="Views\Image\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\StretchCeilingProject.BLL\StretchCeilingProject.BLL.csproj">
+      <Project>{CFD36BB5-CB75-4580-8FF7-706B0EE1634C}</Project>
+      <Name>StretchCeilingProject.BLL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\StretchCeilingProject.Common\StretchCeilingProject.Common.csproj">
       <Project>{1C491725-A9E4-43FA-A558-D0D58B939BFE}</Project>
       <Name>StretchCeilingProject.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StretchCeilingProject.Ninject\StretchCeilingProject.Ninject.csproj">
+      <Project>{53B33094-0631-4FF5-B629-22AB13D2850E}</Project>
+      <Name>StretchCeilingProject.Ninject</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

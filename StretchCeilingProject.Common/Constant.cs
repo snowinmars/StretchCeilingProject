@@ -17,8 +17,11 @@ namespace StretchCeilingProject.Common
                 new Guid(0,0,0,0,0,0,0,0,0,0,3),
                 new Guid(0,0,0,0,0,0,0,0,0,0,4),
             };
+
+            MIMEType = "image/png";
         }
 
         public static IEnumerable<Guid> CarouselImagesIds;
+        public static string MIMEType;
     }
 }

@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StretchCeilingProject.DAL",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StretchCeilingProject.Common", "StretchCeilingProject.Common\StretchCeilingProject.Common.csproj", "{1C491725-A9E4-43FA-A558-D0D58B939BFE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StretchCeilingProject.Ninject", "StretchCeilingProject.Ninject\StretchCeilingProject.Ninject.csproj", "{53B33094-0631-4FF5-B629-22AB13D2850E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StretchCeilingProject.BLL", "StretchCeilingProject.BLL\StretchCeilingProject.BLL.csproj", "{CFD36BB5-CB75-4580-8FF7-706B0EE1634C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{1C491725-A9E4-43FA-A558-D0D58B939BFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C491725-A9E4-43FA-A558-D0D58B939BFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C491725-A9E4-43FA-A558-D0D58B939BFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53B33094-0631-4FF5-B629-22AB13D2850E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53B33094-0631-4FF5-B629-22AB13D2850E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53B33094-0631-4FF5-B629-22AB13D2850E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53B33094-0631-4FF5-B629-22AB13D2850E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFD36BB5-CB75-4580-8FF7-706B0EE1634C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFD36BB5-CB75-4580-8FF7-706B0EE1634C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFD36BB5-CB75-4580-8FF7-706B0EE1634C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFD36BB5-CB75-4580-8FF7-706B0EE1634C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

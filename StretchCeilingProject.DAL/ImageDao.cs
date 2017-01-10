@@ -8,5 +8,14 @@ namespace StretchCeilingProject.DAL
 {
     public class ImageDao
     {
+        public byte[] Get(Guid id)
+        {
+            return null;
+        }
+
+        public void Add(byte[] content)
+        {
+
+        }
     }
 }
