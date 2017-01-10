@@ -1,9 +1,6 @@
-﻿using System;
+﻿using StretchCeilingProject.Entity;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using StretchCeilingProject.Entity;
 
 namespace StretchCeilingProject.DAL
 {
@@ -19,7 +16,7 @@ namespace StretchCeilingProject.DAL
             return null;
         }
 
-        public void Update(Image item)
+        public IEnumerable<Image> GetByFilter()
         {
             throw new NotImplementedException();
         }
@@ -29,7 +26,7 @@ namespace StretchCeilingProject.DAL
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Image> GetByFilter()
+        public void Update(Image item)
         {
             throw new NotImplementedException();
         }

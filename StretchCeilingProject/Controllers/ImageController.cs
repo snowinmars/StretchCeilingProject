@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using StretchCeilingProject.BLL;
+﻿using StretchCeilingProject.BLL;
 using StretchCeilingProject.Common;
 using StretchCeilingProject.Entity;
+using System;
+using System.Web.Mvc;
 
 namespace StretchCeilingProject.Controllers
 {
@@ -17,6 +14,15 @@ namespace StretchCeilingProject.Controllers
         }
 
         private ImageLogic ImageProvider { get; }
+
+        public EmptyResult Add(byte[] content)
+        {
+            Image image = new Image(content);
+
+            this.ImageProvider.Add(image);
+
+            return new EmptyResult();
+        }
 
         public ActionResult Get(Guid? imageId)
         {
@@ -34,15 +40,6 @@ namespace StretchCeilingProject.Controllers
             };
 
             return result;
-        }
-
-        public EmptyResult Add(byte[] content)
-        {
-            Image image = new Image(content);
-
-            this.ImageProvider.Add(image);
-
-            return new EmptyResult();
         }
     }
 }

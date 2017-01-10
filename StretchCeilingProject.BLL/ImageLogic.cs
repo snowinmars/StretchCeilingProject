@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using StretchCeilingProject.DAL;
+﻿using StretchCeilingProject.DAL;
 using StretchCeilingProject.Entity;
+using System;
+using System.Collections.Generic;
 
 namespace StretchCeilingProject.BLL
 {
@@ -17,7 +14,6 @@ namespace StretchCeilingProject.BLL
 
         private ImageDao ImageDao { get; }
 
-
         public void Add(Image item)
         {
             this.ImageDao.Add(item);
@@ -28,9 +24,9 @@ namespace StretchCeilingProject.BLL
             return this.ImageDao.Get(id);
         }
 
-        public void Update(Image item)
+        public IEnumerable<Image> GetByFilter()
         {
-            this.ImageDao.Update(item);
+            throw new NotImplementedException();
         }
 
         public void Remove(Guid id)
@@ -38,9 +34,9 @@ namespace StretchCeilingProject.BLL
             this.ImageDao.Remove(id);
         }
 
-        public IEnumerable<Image> GetByFilter()
+        public void Update(Image item)
         {
-            throw new NotImplementedException();
+            this.ImageDao.Update(item);
         }
     }
 }
