@@ -8,19 +8,19 @@ namespace StretchCeilingProject.Controllers
 {
     public class ImageController : Controller
     {
-        public FileContentResult Get(Guid? id)
+        public ActionResult Get(Guid? imageId)
         {
-            if (id == null ||
-                id == default(Guid))
+            if (imageId == null ||
+                imageId == default(Guid))
             {
-                return new FileContentResult(new byte[0], "image/jpeg");
+                return new FileContentResult(new byte[0], "image/png");
             }
 
             byte[] content = new byte[0];
 
-            var result = new FileContentResult(content, "image/jpeg")
+            var result = new FileContentResult(content, "image/png")
             {
-                FileDownloadName = id.ToString()
+                FileDownloadName = imageId.ToString()
             };
 
             return result;

@@ -43,10 +43,10 @@
             <!-- Wrapper for slimageIdes -->
             <div class="carousel-inner" role="listbox">
                 
-                @foreach (var id in Constant.CarouselImagesIds)
+                @foreach (var imageId in Constant.CarouselImagesIds)
                 {
                     <div class="item">
-                        <img src="@Html.Action("Get", "Image", new {id = id})" alt="carouselImage">
+                        <img src="@Url.Action("Get", "Image", new { imageId = imageId })" alt="carouselImage">
                     </div>
                 }
             </div>
