@@ -91,6 +91,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\StretchCeilingProject.Common\StretchCeilingProject.Common.csproj">
+      <Project>{1C491725-A9E4-43FA-A558-D0D58B939BFE}</Project>
+      <Name>StretchCeilingProject.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\StretchCeilingProject.DAL\StretchCeilingProject.DAL.csproj">
       <Project>{3f7afac7-ecc8-4ac6-bb19-e3fad6ef9191}</Project>
       <Name>StretchCeilingProject.DAL</Name>

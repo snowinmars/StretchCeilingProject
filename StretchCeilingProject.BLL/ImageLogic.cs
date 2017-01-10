@@ -1,7 +1,11 @@
 ﻿using StretchCeilingProject.DAL;
 using StretchCeilingProject.Entity;
 using System;
+using System.CodeDom;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Diagnostics.Contracts;
+using StretchCeilingProject.Common;
 
 namespace StretchCeilingProject.BLL
 {
@@ -16,7 +20,29 @@ namespace StretchCeilingProject.BLL
 
         public void Add(Image item)
         {
-            this.ImageDao.Add(item);
+            Contract.Requires<ArgumentNullException>(item != null, "Image can not be null");
+            Contract.Requires<InvalidOperationException>(item.Content.Length > 0, "Image content is too small");
+
+            if (this.IsValidImage(item))
+            {
+                this.ImageDao.Add(item);
+            }
+            else
+            {
+                throw new InvalidOperationException($"Can't add item with id {item.Id}: logic layer validation failed");
+            }
+        }
+
+        private bool IsValidImage(Image item)
+        {
+            if (item.Content.Length > Constant.MaxImageLengthInBytes ||
+                    string.IsNullOrWhiteSpace(item.MIMEType) ||
+                    item.Id == default(Guid))
+            {
+                return false;
+            }
+
+            return true;
         }
 
         public Image Get(Guid id)

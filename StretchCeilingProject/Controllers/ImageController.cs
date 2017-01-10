@@ -20,7 +20,6 @@ namespace StretchCeilingProject.Controllers
         {
             Contract.Requires<ArgumentNullException>(content != null, "Image content can not be null");
             Contract.Requires<InvalidOperationException>(content.Length > 0, "Image content is too small");
-            Contract.Requires<InvalidOperationException>(content.Length < Constant.MaxImageLengthInBytes, "Image content is too big");
 
             Image image = new Image(content);
 

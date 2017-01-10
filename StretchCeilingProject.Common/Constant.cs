@@ -22,6 +22,6 @@ namespace StretchCeilingProject.Common
 
         public const int MaxImageLengthInBytes = 4*1024*1024; // 4 Mb
 
-        public const string ConnectionString = @"Data Source=(localdb)\ProjectsV13;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        public const string ConnectionString = @"Data Source=(localdb)\ProjectsV13;Initial Catalog=StretchCeilingProject;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
     }
 }
