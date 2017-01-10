@@ -31,7 +31,7 @@ namespace StretchCeilingProject.Controllers
                 file.InputStream.CopyTo(ms);
                 array = ms.GetBuffer();
             }
-            
+
             Image image = new Image(array);
 
             this.ImageLogic.Add(image);

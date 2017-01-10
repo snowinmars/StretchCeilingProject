@@ -35,7 +35,6 @@ where
                 throw new InvalidOperationException($"Can't add item with id {item.Id}: data layer validation failed");
             }
 
-
             using (SqlConnection sqlConnection = new SqlConnection(Constant.ConnectionString))
             {
                 SqlCommand sqlInsertCommand = new SqlCommand(ImageDao.InsertCommand, sqlConnection);
