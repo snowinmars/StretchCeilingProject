@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[Images]
+(
+	[Id] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY, 
+    [Content] VARBINARY(4000) NOT NULL,
+)

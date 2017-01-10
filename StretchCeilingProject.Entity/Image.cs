@@ -1,4 +1,5 @@
-﻿using StretchCeilingProject.Common;
+﻿using System;
+using StretchCeilingProject.Common;
 
 namespace StretchCeilingProject.Entity
 {
@@ -8,10 +9,13 @@ namespace StretchCeilingProject.Entity
         {
             this.Content = content;
             this.MIMEType = mimeType;
+
+            this.Id = Guid.NewGuid();
         }
 
         public byte[] Content { get; }
 
         public string MIMEType { get; }
+        public Guid Id { get; set; }
     }
 }
