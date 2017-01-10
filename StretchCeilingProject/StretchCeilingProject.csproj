@@ -211,6 +211,10 @@
       <Project>{1C491725-A9E4-43FA-A558-D0D58B939BFE}</Project>
       <Name>StretchCeilingProject.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\StretchCeilingProject.Entity\StretchCeilingProject.Entity.csproj">
+      <Project>{AF629B5C-0299-4674-B373-F7AED5454FA3}</Project>
+      <Name>StretchCeilingProject.Entity</Name>
+    </ProjectReference>
     <ProjectReference Include="..\StretchCeilingProject.Ninject\StretchCeilingProject.Ninject.csproj">
       <Project>{53B33094-0631-4FF5-B629-22AB13D2850E}</Project>
       <Name>StretchCeilingProject.Ninject</Name>

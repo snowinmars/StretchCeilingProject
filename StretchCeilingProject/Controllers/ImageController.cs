@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using StretchCeilingProject.BLL;
 using StretchCeilingProject.Common;
+using StretchCeilingProject.Entity;
 
 namespace StretchCeilingProject.Controllers
 {
@@ -37,7 +38,9 @@ namespace StretchCeilingProject.Controllers
 
         public EmptyResult Add(byte[] content)
         {
-            this.ImageProvider.Add(content);
+            Image image = new Image(content);
+
+            this.ImageProvider.Add(image);
 
             return new EmptyResult();
         }

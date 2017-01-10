@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StretchCeilingProject.Ninje
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StretchCeilingProject.BLL", "StretchCeilingProject.BLL\StretchCeilingProject.BLL.csproj", "{CFD36BB5-CB75-4580-8FF7-706B0EE1634C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StretchCeilingProject.Entity", "StretchCeilingProject.Entity\StretchCeilingProject.Entity.csproj", "{AF629B5C-0299-4674-B373-F7AED5454FA3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{CFD36BB5-CB75-4580-8FF7-706B0EE1634C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFD36BB5-CB75-4580-8FF7-706B0EE1634C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFD36BB5-CB75-4580-8FF7-706B0EE1634C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF629B5C-0299-4674-B373-F7AED5454FA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF629B5C-0299-4674-B373-F7AED5454FA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF629B5C-0299-4674-B373-F7AED5454FA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF629B5C-0299-4674-B373-F7AED5454FA3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

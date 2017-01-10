@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3F7AFAC7-ECC8-4AC6-BB19-E3FAD6EF9191}</ProjectGuid>
+    <ProjectGuid>{AF629B5C-0299-4674-B373-F7AED5454FA3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>StretchCeilingProject.DAL</RootNamespace>
-    <AssemblyName>StretchCeilingProject.DAL</AssemblyName>
+    <RootNamespace>StretchCeilingProject.Entity</RootNamespace>
+    <AssemblyName>StretchCeilingProject.Entity</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -41,15 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ICRUD.cs" />
-    <Compile Include="IDao.cs" />
-    <Compile Include="ImageDao.cs" />
+    <Compile Include="Image.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\StretchCeilingProject.Entity\StretchCeilingProject.Entity.csproj">
-      <Project>{AF629B5C-0299-4674-B373-F7AED5454FA3}</Project>
-      <Name>StretchCeilingProject.Entity</Name>
+    <ProjectReference Include="..\StretchCeilingProject.Common\StretchCeilingProject.Common.csproj">
+      <Project>{1c491725-a9e4-43fa-a558-d0d58b939bfe}</Project>
+      <Name>StretchCeilingProject.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

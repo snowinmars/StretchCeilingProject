@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using StretchCeilingProject.DAL;
+using StretchCeilingProject.Entity;
 
 namespace StretchCeilingProject.BLL
 {
-    public class ImageLogic
+    public class ImageLogic : ILogic<Image>
     {
         public ImageLogic(ImageDao imageDao)
         {
@@ -16,14 +17,30 @@ namespace StretchCeilingProject.BLL
 
         private ImageDao ImageDao { get; }
 
-        public byte[] Get(Guid id)
+
+        public void Add(Image item)
         {
-            return ImageDao.Get(id);
+            this.ImageDao.Add(item);
         }
 
-        public void Add(byte[] content)
+        public Image Get(Guid id)
         {
-            ImageDao.Add(content);
+            return this.ImageDao.Get(id);
+        }
+
+        public void Update(Image item)
+        {
+            this.ImageDao.Update(item);
+        }
+
+        public void Remove(Guid id)
+        {
+            this.ImageDao.Remove(id);
+        }
+
+        public IEnumerable<Image> GetByFilter()
+        {
+            throw new NotImplementedException();
         }
     }
 }
