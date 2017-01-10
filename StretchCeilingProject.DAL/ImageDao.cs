@@ -1,8 +1,10 @@
-﻿using StretchCeilingProject.Common;
+﻿using Dapper;
+using StretchCeilingProject.Common;
 using StretchCeilingProject.Entity;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Linq;
 
 namespace StretchCeilingProject.DAL
 {
@@ -37,14 +39,7 @@ where
 
             using (SqlConnection sqlConnection = new SqlConnection(Constant.ConnectionString))
             {
-                SqlCommand sqlInsertCommand = new SqlCommand(ImageDao.InsertCommand, sqlConnection);
-
-                sqlInsertCommand.Parameters.AddWithValue("@id", item.Id);
-                sqlInsertCommand.Parameters.AddWithValue("@content", item.Content);
-
-                sqlConnection.Open();
-                sqlInsertCommand.ExecuteNonQuery();
-                sqlConnection.Close();
+                sqlConnection.Query<Image>(ImageDao.InsertCommand, param: new { item.Id, item.Content });
             }
         }
 
@@ -52,26 +47,8 @@ where
         {
             using (SqlConnection sqlConnection = new SqlConnection(Constant.ConnectionString))
             {
-                SqlCommand sqlSelectCommand = new SqlCommand(ImageDao.SelectCommand, sqlConnection);
-                sqlSelectCommand.Parameters.AddWithValue("@id", id);
-
-                sqlConnection.Open();
-                SqlDataReader reader = sqlSelectCommand.ExecuteReader();
-
-                if (reader.Read())
-                {
-                    byte[] content = reader["Content"] as byte[];
-
-                    return new Image(content)
-                    {
-                        Id = id,
-                    };
-                }
-
-                sqlConnection.Close();
+                return sqlConnection.Query<Image>(ImageDao.SelectCommand, param: new { id }).First();
             }
-
-            return new Image(new byte[0]);
         }
 
         public IEnumerable<Image> GetByFilter()
