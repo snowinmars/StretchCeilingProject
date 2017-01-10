@@ -19,5 +19,7 @@ namespace StretchCeilingProject.Common
                 new Guid(0,0,0,0,0,0,0,0,0,0,4),
             };
         }
+
+        public const int MaxImageLengthInBytes = 4*1024*1024; // 4 Mb
     }
 }
