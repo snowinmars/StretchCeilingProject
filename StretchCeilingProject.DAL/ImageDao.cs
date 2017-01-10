@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using SandS.Algorithm.Extensions.EnumerableExtensionNamespace;
 
 namespace StretchCeilingProject.DAL
 {
@@ -47,7 +48,8 @@ where
         {
             using (SqlConnection sqlConnection = new SqlConnection(Constant.ConnectionString))
             {
-                return sqlConnection.Query<Image>(ImageDao.SelectCommand, param: new { id }).First();
+                return sqlConnection.Query<Image>(ImageDao.SelectCommand, param: new { id })
+                                            .FirstOrDefault_AndIfDefaultGiveMe(Image.Empty);
             }
         }
 

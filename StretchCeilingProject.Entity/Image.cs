@@ -5,17 +5,30 @@ namespace StretchCeilingProject.Entity
 {
     public class Image
     {
-        public Image(byte[] content, string mimeType = Constant.MIMEType)
+        private Image()
+        {
+            
+        }
+
+        public static Image Empty { get; }
+
+        public Image(byte[] content)
         {
             this.Content = content;
-            this.MIMEType = mimeType;
 
             this.Id = Guid.NewGuid();
         }
 
+        static Image()
+        {
+            Empty = new Image(new byte[0])
+            {
+                Id = default(Guid),
+            };
+        }
+
         public byte[] Content { get; }
 
-        public string MIMEType { get; }
         public Guid Id { get; set; }
     }
 }

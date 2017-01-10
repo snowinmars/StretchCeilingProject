@@ -34,7 +34,6 @@ namespace StretchCeilingProject.BLL
         private bool IsValidImage(Image item)
         {
             if (item.Content.Length > Constant.MaxImageLengthInBytes ||
-                    string.IsNullOrWhiteSpace(item.MIMEType) ||
                     item.Id == default(Guid))
             {
                 return false;
