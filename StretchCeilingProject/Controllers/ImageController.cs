@@ -2,6 +2,7 @@
 using StretchCeilingProject.Common;
 using StretchCeilingProject.Entity;
 using System;
+using System.Diagnostics.Contracts;
 using System.Web.Mvc;
 
 namespace StretchCeilingProject.Controllers
@@ -26,11 +27,8 @@ namespace StretchCeilingProject.Controllers
 
         public ActionResult Get(Guid? imageId)
         {
-            if (!imageId.HasValue ||
-                imageId.Value == default(Guid))
-            {
-                return new FileContentResult(new byte[0], Constant.MIMEType);
-            }
+            Contract.Requires<ArgumentNullException>(imageId.HasValue, "Image id can not be null");
+            Contract.Requires<InvalidOperationException>(imageId.Value != default(Guid), "Image id can not be default");
 
             Image content = this.ImageLogic.Get(imageId.Value);
 
