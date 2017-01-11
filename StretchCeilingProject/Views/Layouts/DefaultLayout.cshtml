@@ -11,7 +11,7 @@
 </head>
 <body>
 
-    <header>
+    <header class="col-xs-6 col-xs-offset-3 clearfix">
         <div>
             <div class="logo col-xs-2">
                 logo
@@ -30,15 +30,15 @@
         </ul>
     </header>
 
-    <div class="col-xs-12">
+    <div class="col-xs-6 col-xs-offset-3 clearfix">
         <div id="myCarousel" class="carousel slimageIde" data-rimageIde="carousel">
             <!-- Wrapper for slimageIdes -->
             <div class="carousel-inner" role="listbox">
 
                 @foreach (var imageId in Constant.CarouselImagesIds)
-                {
+            {
                     <div class="item col-xs-6 col-xs-offset-3">
-                        <img src="@Url.Action("Get", "Image", new { imageId = imageId })" alt="carouselImage">
+                        <img src="@Url.Action("Get", "Image", new {imageId = imageId})" alt="carouselImage">
                     </div>
                 }
             </div>
@@ -54,7 +54,10 @@
             </a>
         </div>
     </div>
-    @RenderBody()
+
+    <article class="col-xs-6 col-xs-offset-3 clearfix">
+        @RenderBody()
+    </article>
 
     <script src="~/Scripts/jquery-1.9.1.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
