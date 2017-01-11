@@ -1,9 +1,20 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.Web.Mvc;
+using StretchCeilingProject.BLL;
+using StretchCeilingProject.Entity;
+using StretchCeilingProject.Models;
 
 namespace StretchCeilingProject.Controllers
 {
     public class HomeController : Controller
     {
+        public HomeController(ICellingLogic cellingLogic)
+        {
+            this.CellingLogic = cellingLogic;
+        }
+
+        private ICellingLogic CellingLogic { get; }
+
         public ActionResult Contacts()
         {
             return View();
@@ -21,7 +32,9 @@ namespace StretchCeilingProject.Controllers
 
         public ActionResult Price()
         {
-            return View();
+            IEnumerable<Celling> goods = this.CellingLogic.GetByFilter();
+
+            return View(goods);
         }
     }
 }

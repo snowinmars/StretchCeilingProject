@@ -70,7 +70,7 @@ where
         private bool IsValidImage(Image item)
         {
             // if I found something
-            if (this.Get(item.Id).Content.Length != 0)
+            if (this.Get(item.Id) != Image.Empty)
             {
                 return false;
             }

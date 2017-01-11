@@ -85,6 +85,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CellingLogic.cs" />
+    <Compile Include="ICellingLogic.cs" />
     <Compile Include="ICRUD.cs" />
     <Compile Include="IImageLogic.cs" />
     <Compile Include="ILogic.cs" />

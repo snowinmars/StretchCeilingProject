@@ -8,12 +8,12 @@ namespace StretchCeilingProject.BLL
 {
     public class ImageLogic : IImageLogic
     {
-        public ImageLogic(ImageDao imageDao)
+        public ImageLogic(IImageDao imageDao)
         {
             this.ImageDao = imageDao;
         }
 
-        private ImageDao ImageDao { get; }
+        private IImageDao ImageDao { get; }
 
         public void Add(Image item)
         {
@@ -41,8 +41,7 @@ namespace StretchCeilingProject.BLL
 
         public Image Get(Guid id)
         {
-            Image image = this.ImageDao.Get(id);
-            return image;
+            return this.ImageDao.Get(id);
         }
 
         public IEnumerable<Image> GetByFilter()
