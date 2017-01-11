@@ -1,5 +1,4 @@
-﻿using StretchCeilingProject.Common;
-using System;
+﻿using System;
 
 namespace StretchCeilingProject.Entity
 {
@@ -7,7 +6,7 @@ namespace StretchCeilingProject.Entity
     {
         private Image()
         {
-            
+            // ctor for reflection
         }
 
         public static Image Empty { get; }

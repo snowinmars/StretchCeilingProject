@@ -86,6 +86,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ICRUD.cs" />
+    <Compile Include="IImageLogic.cs" />
     <Compile Include="ILogic.cs" />
     <Compile Include="ImageLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

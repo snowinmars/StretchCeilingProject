@@ -3,11 +3,10 @@ using StretchCeilingProject.DAL;
 using StretchCeilingProject.Entity;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.Contracts;
 
 namespace StretchCeilingProject.BLL
 {
-    public class ImageLogic : ILogic<Image>
+    public class ImageLogic : IImageLogic
     {
         public ImageLogic(ImageDao imageDao)
         {
@@ -18,9 +17,6 @@ namespace StretchCeilingProject.BLL
 
         public void Add(Image item)
         {
-            Contract.Requires<ArgumentNullException>(item != null, "Image can not be null");
-            Contract.Requires<InvalidOperationException>(item.Content.Length > 0, "Image content is too small");
-
             if (this.IsValidImage(item))
             {
                 this.ImageDao.Add(item);
@@ -33,7 +29,8 @@ namespace StretchCeilingProject.BLL
 
         private bool IsValidImage(Image item)
         {
-            if (item.Content.Length > Constant.MaxImageLengthInBytes ||
+            if (item.Content.Length <= 0 ||
+                item.Content.Length > Constant.MaxImageLengthInBytes ||
                     item.Id == default(Guid))
             {
                 return false;
@@ -44,7 +41,8 @@ namespace StretchCeilingProject.BLL
 
         public Image Get(Guid id)
         {
-            return this.ImageDao.Get(id);
+            Image image = this.ImageDao.Get(id);
+            return image;
         }
 
         public IEnumerable<Image> GetByFilter()

@@ -1,15 +1,14 @@
 ﻿using Dapper;
+using SandS.Algorithm.Extensions.EnumerableExtensionNamespace;
 using StretchCeilingProject.Common;
 using StretchCeilingProject.Entity;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using SandS.Algorithm.Extensions.EnumerableExtensionNamespace;
 
 namespace StretchCeilingProject.DAL
 {
-    public class ImageDao : IDao<Image>
+    public class ImageDao : IImageDao
     {
         private const string InsertCommand = @"
 insert into

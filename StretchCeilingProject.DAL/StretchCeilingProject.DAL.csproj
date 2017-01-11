@@ -95,6 +95,7 @@
   <ItemGroup>
     <Compile Include="ICRUD.cs" />
     <Compile Include="IDao.cs" />
+    <Compile Include="IImageDao.cs" />
     <Compile Include="ImageDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
