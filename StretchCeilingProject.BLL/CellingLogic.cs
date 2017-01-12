@@ -1,10 +1,8 @@
-﻿using System;
+﻿using StretchCeilingProject.DAL;
+using StretchCeilingProject.Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using StretchCeilingProject.Entity;
-using StretchCeilingProject.DAL;
 
 namespace StretchCeilingProject.BLL
 {

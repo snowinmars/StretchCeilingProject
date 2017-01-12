@@ -1,18 +1,18 @@
 ﻿@model IEnumerable<StretchCeilingProject.Entity.Celling>
 
-    @{
-        ViewBag.Title = "Price";
-        Layout = "~/Views/Layouts/DefaultLayout.cshtml";
+@{
+    ViewBag.Title = "Price";
+    Layout = "~/Views/Layouts/DefaultLayout.cshtml";
 
-    }
+}
 
-    <h2>Price</h2>
+<h2>Price</h2>
 
 <article class="col-xs-12">
     @foreach (var item in Model)
     {
         <div class="col-xs-6">
-            <img src="@Url.Action("Get", "Image", new {imageId = item.ImageId})" alt="Image"/>
+            <img src="@Url.Action("Get", "Image", new {imageId = item.ImageId})" alt="Image" />
             <div>@item.Cost</div>
         </div>
     }

@@ -1,8 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Web.Mvc;
-using StretchCeilingProject.BLL;
+﻿using StretchCeilingProject.BLL;
 using StretchCeilingProject.Entity;
-using StretchCeilingProject.Models;
+using System.Collections.Generic;
+using System.Web.Mvc;
 
 namespace StretchCeilingProject.Controllers
 {

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StretchCeilingProject.Entity
 {
@@ -24,7 +20,7 @@ namespace StretchCeilingProject.Entity
             };
         }
 
-        public Guid  Id { get; set; }
+        public Guid Id { get; set; }
         public Guid ImageId { get; set; }
         public float Cost { get; set; }
         public string Description { get; set; }
