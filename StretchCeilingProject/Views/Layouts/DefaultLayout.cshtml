@@ -3,7 +3,7 @@
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-wimageIdth" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>DefaultLayout</title>
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
@@ -11,26 +11,34 @@
 </head>
 <body>
 
-    <header class="col-xs-6 col-xs-offset-3 clearfix">
-        <div>
-            <div class="logo col-xs-2">
-                logo
-            </div>
+    <header class="col-lg-6 col-lg-offset-3 col-md-12 clearfix">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Телефон: 12-34-56</a>
+                </div>
 
-            <div class="contactPhone col-xs-2 col-xs-offset-8">
-                12-34-56
-            </div>
-        </div>
-
-        <ul class="nav nav-pills mainMenu col-xs-11 col-xs-offset-1">
-            <li role="presentation" data-name="main" class="active">@Html.ActionLink("Главная", "Index", "Home")</li>
-            <li role="presentation" data-name="price">@Html.ActionLink("Цены", "Price", "Home")</li>
-            <li role="presentation" data-name="description">@Html.ActionLink("Описание", "Description", "Home")</li>
-            <li role="presentation" data-name="contacts">@Html.ActionLink("Контакты", "Contacts", "Home")</li>
-        </ul>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li data-name="main" class="active">@Html.ActionLink("Главная", "Index", "Home")</li>
+                        <li data-name="price">@Html.ActionLink("Цены", "Price", "Home")</li>
+                        <li data-name="description">@Html.ActionLink("Описание", "Description", "Home")</li>
+                        <li data-name="contacts">@Html.ActionLink("Контакты", "Contacts", "Home")</li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
     </header>
 
-    <div class="col-xs-6 col-xs-offset-3 clearfix">
+    <div class="col-lg-6 col-lg-offset-3 col-md-12 hidden-xs clearfix">
         <div id="myCarousel" class="carousel slimageIde" data-rimageIde="carousel">
             <!-- Wrapper for slimageIdes -->
             <div class="carousel-inner" role="listbox">
@@ -56,7 +64,7 @@
         </div>
     </div>
 
-    <article class="col-xs-6 col-xs-offset-3 clearfix">
+    <article class="col-lg-6 col-lg-offset-3 col-md-12 clearfix">
         @RenderBody()
     </article>
 

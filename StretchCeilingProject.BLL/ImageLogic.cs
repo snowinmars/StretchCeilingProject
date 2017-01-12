@@ -44,11 +44,6 @@ namespace StretchCeilingProject.BLL
             return this.ImageDao.Get(id);
         }
 
-        public IEnumerable<Image> GetByFilter()
-        {
-            throw new NotImplementedException();
-        }
-
         public void Remove(Guid id)
         {
             this.ImageDao.Remove(id);
@@ -57,6 +52,11 @@ namespace StretchCeilingProject.BLL
         public void Update(Image item)
         {
             this.ImageDao.Update(item);
+        }
+
+        public IEnumerable<Image> GetByFilter(ImageFilter filter)
+        {
+            throw new NotImplementedException();
         }
     }
 }

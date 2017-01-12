@@ -20,7 +20,7 @@ namespace StretchCeilingProject.DAL
                 throw new InvalidOperationException($"Can't add celling with id {item.Id}: data layer validation failed");
             }
 
-            using (SqlConnection sqlConnection = new SqlConnection(Constant.ConnectionString))
+            using (var sqlConnection = new SqlConnection(Constant.ConnectionString))
             {
                 sqlConnection.Query<Image>(CellingDao.InsertCommand, param: new { item.Id, item.ImageId, item.Cost, item.Description });
             }
@@ -52,6 +52,15 @@ from
 where
     [Id] = @id";
 
+        private const string SelectAllComand = @"
+select
+    [Id]
+    , [ImageId]
+    , [Cost]
+    , [Description]
+from
+    [dbo].[Celling]";
+
         private bool IsValidImage(Celling item)
         {
             // if I found something
@@ -65,7 +74,7 @@ where
 
         public Celling Get(Guid id)
         {
-            using (SqlConnection sqlConnection = new SqlConnection(Constant.ConnectionString))
+            using (var sqlConnection = new SqlConnection(Constant.ConnectionString))
             {
                 return sqlConnection.Query<Celling>(CellingDao.SelectCommand, param: new { id })
                                             .FirstOrDefault_AndIfDefaultGiveMe(Celling.Empty);
@@ -82,9 +91,12 @@ where
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Celling> GetByFilter()
+        public IEnumerable<Celling> GetByFilter(CellingFilter filter)
         {
-            throw new NotImplementedException();
+            using (var sqlConnection = new SqlConnection(Constant.ConnectionString))
+            {
+                return sqlConnection.Query<Celling>(CellingDao.SelectAllComand);
+            }
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace StretchCeilingProject.BLL
 {
-    public interface IImageLogic : ILogic<Image>
+    public interface IImageLogic : ILogic<Image, ImageFilter>
     {
     }
 }

@@ -24,3 +24,8 @@
 .carousel {
     margin-bottom: 4ex;
 }
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}

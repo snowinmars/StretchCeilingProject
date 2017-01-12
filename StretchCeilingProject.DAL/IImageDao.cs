@@ -2,7 +2,7 @@
 
 namespace StretchCeilingProject.DAL
 {
-    public interface IImageDao : IDao<Image>
+    public interface IImageDao : IDao<Image, ImageFilter>
     {
     }
 }

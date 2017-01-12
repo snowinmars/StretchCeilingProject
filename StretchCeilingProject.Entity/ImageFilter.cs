@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using StretchCeilingProject.Entity;
 
-namespace StretchCeilingProject.DAL
+namespace StretchCeilingProject.Entity
 {
-    public interface ICeilingDao : IDao<Celling, CellingFilter>
+    public class ImageFilter
     {
     }
 }

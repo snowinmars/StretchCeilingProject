@@ -32,7 +32,7 @@ namespace StretchCeilingProject.Controllers
 
         public ActionResult Price()
         {
-            IEnumerable<Celling> goods = this.CellingLogic.GetByFilter();
+            IEnumerable<Celling> goods = this.CellingLogic.GetByFilter(new CellingFilter());
 
             return View(goods);
         }

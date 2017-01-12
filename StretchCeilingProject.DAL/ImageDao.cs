@@ -52,11 +52,6 @@ where
             }
         }
 
-        public IEnumerable<Image> GetByFilter()
-        {
-            throw new NotImplementedException();
-        }
-
         public void Remove(Guid id)
         {
             throw new NotImplementedException();
@@ -76,6 +71,11 @@ where
             }
 
             return true;
+        }
+
+        public IEnumerable<Image> GetByFilter(ImageFilter filter)
+        {
+            throw new NotImplementedException();
         }
     }
 }

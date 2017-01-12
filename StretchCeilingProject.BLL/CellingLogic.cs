@@ -57,9 +57,9 @@ namespace StretchCeilingProject.BLL
             this.CellingDao.Update(item);
         }
 
-        public IEnumerable<Celling> GetByFilter()
+        public IEnumerable<Celling> GetByFilter(CellingFilter filter)
         {
-            throw new NotImplementedException();
+            return this.CellingDao.GetByFilter(filter).ToList();
         }
     }
 }
