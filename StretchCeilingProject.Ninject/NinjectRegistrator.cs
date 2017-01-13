@@ -8,10 +8,10 @@ namespace StretchCeilingProject.Ninject
     {
         public static void Register(IKernel kernel)
         {
-            kernel.Bind<IImageLogic>().To<ImageLogic>();
-            kernel.Bind<IImageDao>().To<ImageDao>();
-            kernel.Bind<ICellingLogic>().To<CellingLogic>();
-            kernel.Bind<ICeilingDao>().To<CellingDao>();
+            kernel.Bind<IImageLogic>().To<ImageLogic>().InSingletonScope();
+            kernel.Bind<IImageDao>().To<ImageDao>().InSingletonScope();
+            kernel.Bind<ICellingLogic>().To<CellingLogic>().InSingletonScope();
+            kernel.Bind<ICeilingDao>().To<CellingDao>().InSingletonScope();
         }
     }
 }
