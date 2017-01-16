@@ -9,14 +9,6 @@
     box-sizing: border-box;
 }
 
-.contactPhone {
-    display: inline-block;
-}
-
-.logo {
-    display: inline-block;
-}
-
 .mainMenu {
     padding-top: 30px;
     margin-bottom: 10px;
@@ -34,10 +26,10 @@ img {
 .celling {
     margin-bottom: 1ex;
     padding: 1ex;
-    }
+}
 
 .cellingDescription {
     overflow: hidden;
-     text-overflow: ellipsis;
-      white-space: nowrap;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }

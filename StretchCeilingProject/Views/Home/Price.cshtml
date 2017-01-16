@@ -16,24 +16,24 @@
             <li><a href="#@pair.Key" role="tab" data-toggle="tab">@pair.Key.GetName()</a></li>
         }
     </ul>
-    
-        <div class="tab-content ">
-    @foreach (var pair in Model)
-    {
+
+    <div class="tab-content ">
+        @foreach (var pair in Model)
+        {
             <div class="tab-pane active row" id="@pair.Key">
-            @foreach (var celling in pair)
-            {
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="celling">
-                        <div class="cellingDescription">@celling.Description</div>
-                        <img src="@Url.Action("Get", "Image", new {imageId = celling.ImageId})" alt="Image" />
-                        <div class="text-right">
-                            <span>@celling.Cost</span>
+                @foreach (var celling in pair)
+                {
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="celling">
+                            <div class="cellingDescription">@celling.Description</div>
+                            <img src="@Url.Action("Get", "Image", new {imageId = celling.ImageId})" alt="Image" />
+                            <div class="text-right">
+                                <span>@celling.Cost</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-            }
+                }
             </div>
-    }
-        </div>
+        }
+    </div>
 </article>

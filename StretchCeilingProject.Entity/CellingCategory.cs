@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StretchCeilingProject.Entity
 {
@@ -22,12 +18,16 @@ namespace StretchCeilingProject.Entity
             {
                 case CellingCategory.None:
                     return "Не указана";
+
                 case CellingCategory.Celling:
                     return "Потолки";
+
                 case CellingCategory.Construction:
                     return "Установка конструкции по периметру";
+
                 case CellingCategory.Another:
                     return "Доп. услуги";
+
                 default:
                     throw new ArgumentOutOfRangeException(nameof(cellingCategory), cellingCategory, null);
             }
