@@ -31,7 +31,7 @@ namespace StretchCeilingProject.BLL
         {
             if (item.Id == default(Guid) ||
                 item.ImageId == default(Guid) ||
-                item.Cost <= 0 ||
+                string.IsNullOrWhiteSpace(item.Cost) ||
                 string.IsNullOrWhiteSpace(item.Description))
             {
                 return false;
@@ -58,6 +58,11 @@ namespace StretchCeilingProject.BLL
         public IEnumerable<Celling> GetByFilter(CellingFilter filter)
         {
             return this.CellingDao.GetByFilter(filter).ToList();
+        }
+
+        public IEnumerable<IGrouping<CellingCategory, Celling>> GetGroupedByCategory()
+        {
+            return this.CellingDao.GetGroupedByCategory();
         }
     }
 }

@@ -5,6 +5,7 @@ using StretchCeilingProject.Entity;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Linq;
 
 namespace StretchCeilingProject.DAL
 {
@@ -30,12 +31,14 @@ insert into
     , [ImageId]
     , [Cost]
     , [Description]
+    , [Category]
     )
 values (
     @id
     , @imageId
     , @cost
     , @description
+    , @category
     )";
 
         private const string SelectCommand = @"
@@ -44,6 +47,7 @@ select
     , [ImageId]
     , [Cost]
     , [Description]
+    , [Category]
 from
     [dbo].[Celling]
 where
@@ -55,6 +59,7 @@ select
     , [ImageId]
     , [Cost]
     , [Description]
+    , [Category]
 from
     [dbo].[Celling]";
 
@@ -94,6 +99,11 @@ from
             {
                 return sqlConnection.Query<Celling>(CellingDao.SelectAllComand);
             }
+        }
+
+        public IEnumerable<IGrouping<CellingCategory, Celling>> GetGroupedByCategory()
+        {
+            return this.GetByFilter(new CellingFilter()).GroupBy(item => item.Category);
         }
     }
 }

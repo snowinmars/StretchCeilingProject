@@ -86,6 +86,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Celling.cs" />
+    <Compile Include="CellingCategory.cs" />
     <Compile Include="CellingFilter.cs" />
     <Compile Include="Image.cs" />
     <Compile Include="ImageFilter.cs" />

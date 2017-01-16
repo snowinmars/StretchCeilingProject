@@ -1,6 +1,7 @@
 ﻿using StretchCeilingProject.BLL;
 using StretchCeilingProject.Entity;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace StretchCeilingProject.Controllers
@@ -31,7 +32,7 @@ namespace StretchCeilingProject.Controllers
 
         public ActionResult Price()
         {
-            IEnumerable<Celling> goods = this.CellingLogic.GetByFilter(new CellingFilter());
+            IEnumerable<IGrouping<CellingCategory, Celling>> goods = this.CellingLogic.GetGroupedByCategory();
 
             return View(goods);
         }

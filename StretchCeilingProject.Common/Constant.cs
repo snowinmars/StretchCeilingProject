@@ -17,9 +17,6 @@ namespace StretchCeilingProject.Common
                 new Guid(0,0,0,0,0,0,0,0,0,0,2),
                 new Guid(0,0,0,0,0,0,0,0,0,0,3),
                 new Guid(0,0,0,0,0,0,0,0,0,0,4),
-                new Guid(0,0,0,0,0,0,0,0,0,0,5),
-                new Guid(0,0,0,0,0,0,0,0,0,0,6),
-                new Guid(0,0,0,0,0,0,0,0,0,0,7),
             };
 
 #if DEBUG

@@ -15,14 +15,15 @@ namespace StretchCeilingProject.Entity
             {
                 Id = default(Guid),
                 ImageId = default(Guid),
-                Cost = 0,
+                Cost = "",
                 Description = string.Empty,
             };
         }
 
+        public CellingCategory Category { get; set; }
         public Guid Id { get; set; }
         public Guid ImageId { get; set; }
-        public float Cost { get; set; }
+        public string Cost { get; set; }
         public string Description { get; set; }
         public static Celling Empty { get; }
     }

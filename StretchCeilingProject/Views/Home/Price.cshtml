@@ -1,4 +1,5 @@
-﻿@model IEnumerable<StretchCeilingProject.Entity.Celling>
+﻿@using StretchCeilingProject.Entity
+@model IEnumerable<IGrouping<StretchCeilingProject.Entity.CellingCategory, StretchCeilingProject.Entity.Celling>>
 
 @{
     ViewBag.Title = "Price";
@@ -9,11 +10,30 @@
 <h2>Price</h2>
 
 <article class="col-xs-12">
-    @foreach (var item in Model)
+    <ul class="nav nav-tabs cellings" role="tablist" id="myTabExample">
+        @foreach (var pair in Model)
+        {
+            <li><a href="#@pair.Key" role="tab" data-toggle="tab">@pair.Key.GetName()</a></li>
+        }
+    </ul>
+    
+        <div class="tab-content ">
+    @foreach (var pair in Model)
     {
-        <div class="col-xs-6">
-            <img src="@Url.Action("Get", "Image", new {imageId = item.ImageId})" alt="Image" />
-            <div>@item.Cost</div>
-        </div>
+            <div class="tab-pane active row" id="@pair.Key">
+            @foreach (var celling in pair)
+            {
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="celling">
+                        <div class="cellingDescription">@celling.Description</div>
+                        <img src="@Url.Action("Get", "Image", new {imageId = celling.ImageId})" alt="Image" />
+                        <div class="text-right">
+                            <span>@celling.Cost</span>
+                        </div>
+                    </div>
+                </div>
+            }
+            </div>
     }
+        </div>
 </article>

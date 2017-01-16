@@ -7,11 +7,12 @@
     <title>DefaultLayout</title>
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/Content/colorTheme.css" rel="stylesheet" />
     <link href="~/Content/commonStyleSheet.css" rel="stylesheet" />
 </head>
 <body>
 
-    <header class="col-lg-6 col-lg-offset-3 col-md-12 clearfix">
+    <header class="col-lg-8 col-lg-offset-2 col-md-12 clearfix">
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -28,17 +29,17 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li data-name="main" class="active">@Html.ActionLink("Главная", "Index", "Home")</li>
-                        <li data-name="price">@Html.ActionLink("Цены", "Price", "Home")</li>
-                        <li data-name="description">@Html.ActionLink("Описание", "Description", "Home")</li>
-                        <li data-name="contacts">@Html.ActionLink("Контакты", "Contacts", "Home")</li>
+                        <li data-name="Index">@Html.ActionLink("Главная", "Index", "Home")</li>
+                        <li data-name="Price">@Html.ActionLink("Цены", "Price", "Home")</li>
+                        <li data-name="Description">@Html.ActionLink("Описание", "Description", "Home")</li>
+                        <li data-name="Contacts">@Html.ActionLink("Контакты", "Contacts", "Home")</li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
     </header>
 
-    <div class="col-lg-6 col-lg-offset-3 col-md-12 hidden-xs clearfix">
+    <div class="col-lg-8 col-lg-offset-2 col-md-12 hidden-xs clearfix">
         <div id="myCarousel" class="carousel slimageIde" data-rimageIde="carousel">
             <!-- Wrapper for slimageIdes -->
             <div class="carousel-inner" role="listbox">
@@ -64,7 +65,7 @@
         </div>
     </div>
 
-    <article class="col-lg-6 col-lg-offset-3 col-md-12 clearfix">
+    <article class="col-lg-8 col-lg-offset-2 col-md-12 clearfix">
         @RenderBody()
     </article>
 
