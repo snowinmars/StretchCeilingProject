@@ -39,7 +39,7 @@ img {
 }
 
 .callme > img {
-    max-width: 4ex;
+    max-width: 8ex;
 }
 
 .item {
@@ -103,4 +103,12 @@ img {
     color: greenyellow;
     margin-left: -1em; 
     margin-right: 1em;
+}
+
+.cellingDescriptionAsd {
+    font-size: 4ex;
+    font-weight: bold;
+}
+
+.cellingDescriptionTitle {
 }

@@ -5,11 +5,13 @@
     Layout = "~/Views/Layouts/DefaultLayout.cshtml";
 }
 
-<h2>@Model.Key</h2>
+<div class="centred cellingDescriptionAsd">@Model.Key</div>
 
 <div class="col-xs-12">
-    <p>@Model.Value.Description</p>
+    <p >@Model.Value.Description</p>
     
+    <h2 class="centred cellingDescriptionTitle">Его сильные стороны</h2>
+
     <ul class="advantages">
         @foreach (var item in Model.Value.Procs)
         {

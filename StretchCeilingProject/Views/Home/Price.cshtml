@@ -45,6 +45,8 @@
                         </div>
                     }
                 }
+                
+                @*<img src="@Url.Action("Get", "Image", new {imageId = "00000000-0000-0000-0000-000000000010"})" alt="Image" />*@
 
                 @if (pair.Key == CellingCategory.Another)
                 {
@@ -72,9 +74,9 @@
                 @if (pair.Key == CellingCategory.Celling)
                 {
                     <div class="col-xs-12 examples">
-                        <h3>Примеры наших работ</h3>
+                        <h3>Наши работы</h3>
 
-                        @foreach (var imageId in Constant.CarouselImagesIds)
+                        @foreach (var imageId in Constant.AnotherCarouselImagesIds)
                         {
                             <div class="item col-sm-6 col-xs-12">
                                 <img src="@Url.Action("Get", "Image", new {imageId = imageId})" alt="carouselImage">

@@ -13,6 +13,14 @@ namespace StretchCeilingProject.Common
         {
             Constant.CarouselImagesIds = new[]
             {
+                new Guid(0,0,0,0,0,0,0,0,0,0,11),
+                new Guid(0,0,0,0,0,0,0,0,0,0,12),
+                new Guid(0,0,0,0,0,0,0,0,0,0,13),
+                new Guid(0,0,0,0,0,0,0,0,0,0,14),
+            };
+
+            Constant.AnotherCarouselImagesIds = new[]
+            {
                 new Guid(0,0,0,0,0,0,0,0,0,0,2),
                 new Guid(0,0,0,0,0,0,0,0,0,0,3),
                 new Guid(0,0,0,0,0,0,0,0,0,0,4),
@@ -21,6 +29,7 @@ namespace StretchCeilingProject.Common
                 new Guid(0,0,0,0,0,0,0,0,0,0,7),
                 new Guid(0,0,0,0,0,0,0,0,0,0,8),
                 new Guid(0,0,0,0,0,0,0,0,0,0,9),
+
             };
 
 #if DEBUG
@@ -29,6 +38,8 @@ namespace StretchCeilingProject.Common
             Constant.IsDebug = false;
 #endif
         }
+
+        public static Guid[] AnotherCarouselImagesIds { get; set; }
 
         public const int MaxImageLengthInBytes = 4 * 1024 * 1024; // 4 Mb
 

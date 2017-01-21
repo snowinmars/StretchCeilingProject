@@ -20,11 +20,6 @@ namespace StretchCeilingProject.Controllers
             return View();
         }
 
-        public ActionResult Description()
-        {
-            return View();
-        }
-
         public ActionResult Index()
         {
             return View();
@@ -35,6 +30,11 @@ namespace StretchCeilingProject.Controllers
             IEnumerable<IGrouping<CellingCategory, Celling>> goods = this.CellingLogic.GetGroupedByCategory();
 
             return View(goods);
+        }
+
+        public ActionResult Reviews()
+        {
+            return View();
         }
     }
 }
