@@ -13,10 +13,14 @@ namespace StretchCeilingProject.Common
         {
             Constant.CarouselImagesIds = new[]
             {
-                new Guid(0,0,0,0,0,0,0,0,0,0,1),
                 new Guid(0,0,0,0,0,0,0,0,0,0,2),
                 new Guid(0,0,0,0,0,0,0,0,0,0,3),
                 new Guid(0,0,0,0,0,0,0,0,0,0,4),
+                new Guid(0,0,0,0,0,0,0,0,0,0,5),
+                new Guid(0,0,0,0,0,0,0,0,0,0,6),
+                new Guid(0,0,0,0,0,0,0,0,0,0,7),
+                new Guid(0,0,0,0,0,0,0,0,0,0,8),
+                new Guid(0,0,0,0,0,0,0,0,0,0,9),
             };
 
 #if DEBUG
