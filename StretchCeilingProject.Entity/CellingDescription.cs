@@ -14,8 +14,20 @@ namespace StretchCeilingProject.Entity
             this.ImageIds = new List<Guid>();
         }
 
+        public Guid Id { get; set; }
         public string Description { get; set; }
-        public IEnumerable<string> Procs { get; }
-        public IEnumerable<Guid> ImageIds { get; }
+        public IList<string> Procs { get; }
+        public IList<Guid> ImageIds { get; }
+
+        public static CellingDescription Empty
+        {
+            get
+            {
+                return new CellingDescription
+                {
+                    Description = "",
+                };
+            }
+        }
     }
 }

@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using Newtonsoft.Json;
 
 namespace StretchCeilingProject.DAL
 {
@@ -67,6 +68,19 @@ select
 from
     [dbo].[Celling]";
 
+        private const string SelectDescriptionCommand = @"
+select 
+    [Id]
+    , [Procs]
+    , [ImageIds]
+    , [Description]
+from
+    [dbo].[CellingDescription]
+where
+    [Id] = @id
+";
+
+
         private bool IsValidImage(Celling item)
         {
             // if I found something
@@ -112,7 +126,49 @@ from
 
         public CellingDescription GetDescription(Guid id)
         {
-            return null;
+            using (var sqlConnection = new SqlConnection(Constant.ConnectionString))
+            {
+                var tmps = sqlConnection.Query<TmpCellingDescription>(CellingDao.SelectDescriptionCommand, param: new { id });
+
+                if (tmps == null)
+                {
+                    return CellingDescription.Empty;
+                }
+
+                foreach (var tmp in tmps)
+                {
+                    var c = new CellingDescription
+                    {
+                        Description = tmp.Description,
+                        Id = tmp.Id,
+                    };
+
+                    IEnumerable<string> procs = JsonConvert.DeserializeObject<IEnumerable<string>>(tmp.Procs);
+                    IEnumerable<Guid> imageIds = JsonConvert.DeserializeObject<IEnumerable<Guid>>(tmp.ImageIds);
+
+                    foreach (var proc in procs)
+                    {
+                        c.Procs.Add(proc);
+                    }
+
+                    foreach (var imageId in imageIds)
+                    {
+                        c.ImageIds.Add(imageId);
+                    }
+
+                    return c;
+                }
+
+                return CellingDescription.Empty;
+            }
         }
+    }
+
+    internal class TmpCellingDescription
+    {
+        public Guid Id { get; set; }
+        public string Description { get; set; }
+        public string Procs { get; set; }
+        public string ImageIds { get; set; }
     }
 }

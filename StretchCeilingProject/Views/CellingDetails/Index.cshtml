@@ -1,24 +1,30 @@
-﻿@model StretchCeilingProject.Entity.CellingDescription
+﻿@model KeyValuePair<string, StretchCeilingProject.Entity.CellingDescription>
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Layouts/DefaultLayout.cshtml";
 }
 
-<div>
-    <h4>CellingDescription</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
+<h2>@Model.Key</h2>
 
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-
-    </dl>
+<div class="col-xs-12">
+    <p>@Model.Value.Description</p>
+    
+    <ul class="advantages">
+        @foreach (var item in Model.Value.Procs)
+        {
+            <li>@item</li>
+        }
+    </ul>
+    
+    <h3>Примеры работ</h3>
+    
+    @foreach (var imageId in Model.Value.ImageIds)
+    {
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="celling">
+                <img src="@Url.Action("Get", "Image", new {imageId = imageId})" alt="Image" />
+            </div>
+        </div>
+    }
 </div>
-<p>
-    @Html.ActionLink("Back to List", "Index")
-</p>
