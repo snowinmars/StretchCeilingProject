@@ -36,7 +36,7 @@
                     <ul class="nav navbar-nav">
                         <li data-name="Index">@Html.ActionLink("Главная", "Index", "Home")</li>
                         <li data-name="Price">@Html.ActionLink("Цены", "Price", "Home")</li>
-                        <li data-name="Description">@Html.ActionLink("Описание", "Description", "Home")</li>
+                        <li data-name="Title">@Html.ActionLink("Описание", "Description", "Home")</li>
                         <li data-name="Contacts">@Html.ActionLink("Контакты", "Contacts", "Home")</li>
                     </ul>
                     <a class="navbar-brand" style="float: right" href="#">Телефон: 12-34-56</a>
@@ -74,11 +74,21 @@
     </div>
 </div>
 
-    <article class="col-lg-8 col-lg-offset-2 col-md-12 clearfix">
-        @RenderBody()
-    </article>
+<article class="col-lg-8 col-lg-offset-2 col-md-12 clearfix">
+    @RenderBody()
+</article>
+    
+    @if (Constant.IsDebug)
+    {
+        using (Html.BeginForm("Add", "Image", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <input type="file" name="file" />
 
-    <script src="~/Scripts/jquery-1.9.1.min.js"></script>
+            <input type="submit" value="Go" />
+        }
+    }
+
+<script src="~/Scripts/jquery-1.9.1.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Scripts/commonJavaScript.js"></script>
 </body>

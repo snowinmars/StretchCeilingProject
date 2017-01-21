@@ -1,4 +1,5 @@
-﻿@using StretchCeilingProject.Entity
+﻿@using StretchCeilingProject.Common
+@using StretchCeilingProject.Entity
 @model IEnumerable<IGrouping<StretchCeilingProject.Entity.CellingCategory, StretchCeilingProject.Entity.Celling>>
 
 @{
@@ -10,6 +11,12 @@
 <h2>Price</h2>
 
 <article class="col-xs-12">
+    <span>Наша компания</span>
+
+    <span>Наши преимущества </span>
+
+    <span>Мы предлагаем натяжные потолки:</span>
+
     <ul class="nav nav-tabs cellings" role="tablist" id="myTabExample">
         @foreach (var pair in Model)
         {
@@ -25,15 +32,31 @@
                 {
                     <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="celling">
-                            <div class="cellingDescription">@celling.Description</div>
+                            <h3 class="cellingDescription">@celling.Title</h3>
                             <img src="@Url.Action("Get", "Image", new {imageId = celling.ImageId})" alt="Image" />
-                            <div class="text-right">
-                                <span>@celling.Cost</span>
+                            <div>
+                                <span>@celling.Description</span>
                             </div>
                         </div>
                     </div>
                 }
+
+                @if (pair.Key == CellingCategory.Celling)
+                {
+
+                    <div class="col-xs-12 examples">
+                        <h3>Примеры наших работ</h3>
+
+                        @foreach (var imageId in Constant.CarouselImagesIds)
+                        {
+                            <div class="item col-sm-6 col-xs-12">
+                                <img src="@Url.Action("Get", "Image", new {imageId = imageId})" alt="carouselImage">
+                            </div>
+                        }
+                    </div>
+                }
             </div>
+
         }
     </div>
 </article>

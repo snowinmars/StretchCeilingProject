@@ -42,6 +42,10 @@ img {
     max-width: 4ex;
 }
 
+.item {
+    padding: 4px;
+}
+
 @-webkit-keyframes scroll {
     0% {
         -webkit-transform: translate(0, 0);
@@ -88,4 +92,8 @@ img {
     -webkit-animation: scroll 5s infinite linear;
     -moz-animation: scroll 5s infinite linear;
     animation: scroll 5s infinite linear;
+}
+
+.examples {
+    margin-top: 4ex
 }

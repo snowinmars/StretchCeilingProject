@@ -20,7 +20,7 @@ namespace StretchCeilingProject.DAL
 
             using (var sqlConnection = new SqlConnection(Constant.ConnectionString))
             {
-                sqlConnection.Query<Image>(CellingDao.InsertCommand, param: new { item.Id, item.ImageId, item.Cost, item.Description });
+                sqlConnection.Query<Image>(CellingDao.InsertCommand, param: new { item.Id, item.ImageId, item.Cost, Description = item.Title });
             }
         }
 
@@ -30,15 +30,17 @@ insert into
     [Id]
     , [ImageId]
     , [Cost]
-    , [Description]
+    , [Title]
     , [Category]
+    , [Description]
     )
 values (
     @id
     , @imageId
     , @cost
-    , @description
+    , @title
     , @category
+    , @description
     )";
 
         private const string SelectCommand = @"
@@ -46,8 +48,9 @@ select
     [Id]
     , [ImageId]
     , [Cost]
-    , [Description]
+    , [Title]
     , [Category]
+    , [Description]
 from
     [dbo].[Celling]
 where
@@ -58,8 +61,9 @@ select
     [Id]
     , [ImageId]
     , [Cost]
-    , [Description]
+    , [Title]
     , [Category]
+    , [Description]
 from
     [dbo].[Celling]";
 

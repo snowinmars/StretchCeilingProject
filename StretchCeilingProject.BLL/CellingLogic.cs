@@ -32,7 +32,7 @@ namespace StretchCeilingProject.BLL
             if (item.Id == default(Guid) ||
                 item.ImageId == default(Guid) ||
                 string.IsNullOrWhiteSpace(item.Cost) ||
-                string.IsNullOrWhiteSpace(item.Description))
+                string.IsNullOrWhiteSpace(item.Title))
             {
                 return false;
             }

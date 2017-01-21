@@ -16,7 +16,7 @@ namespace StretchCeilingProject.Entity
                 Id = default(Guid),
                 ImageId = default(Guid),
                 Cost = "",
-                Description = string.Empty,
+                Title = string.Empty,
             };
         }
 
@@ -24,6 +24,7 @@ namespace StretchCeilingProject.Entity
         public Guid Id { get; set; }
         public Guid ImageId { get; set; }
         public string Cost { get; set; }
+        public string Title { get; set; }
         public string Description { get; set; }
         public static Celling Empty { get; }
     }
