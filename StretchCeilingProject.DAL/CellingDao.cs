@@ -109,5 +109,10 @@ from
         {
             return this.GetByFilter(new CellingFilter()).GroupBy(item => item.Category);
         }
+
+        public CellingDescription GetDescription(Guid id)
+        {
+            return null;
+        }
     }
 }

@@ -15,10 +15,12 @@ insert into
 [dbo].[Images] (
     [Id]
     , [Content]
+    , [Date]
     )
 values (
     @id
     , @content
+    , @date
     )";
 
         private const string SelectCommand = @"
@@ -39,7 +41,7 @@ where
 
             using (SqlConnection sqlConnection = new SqlConnection(Constant.ConnectionString))
             {
-                sqlConnection.Query<Image>(ImageDao.InsertCommand, param: new { item.Id, item.Content });
+                sqlConnection.Query<Image>(ImageDao.InsertCommand, param: new { item.Id, item.Content, date=DateTime.Now.ToLongTimeString() });
             }
         }
 

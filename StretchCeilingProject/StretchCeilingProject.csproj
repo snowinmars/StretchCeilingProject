@@ -216,6 +216,7 @@
   <ItemGroup>
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CellingDetailsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -236,6 +237,7 @@
     <Content Include="Views\Home\Price.cshtml" />
     <Content Include="Views\Home\Description.cshtml" />
     <Content Include="Views\Home\Contacts.cshtml" />
+    <Content Include="Views\CellingDetails\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

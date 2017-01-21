@@ -34,7 +34,9 @@
                     {
                         <div class="col-md-4 col-sm-6 col-xs-12">
                             <div class="celling">
-                                <h3 class="cellingDescription">@celling.Title</h3>
+                                <h3 class="cellingDescription">
+                                    @Html.ActionLink(celling.Title, "Index", "CellingDetails", new {Id = celling.Id}, null)
+                                </h3>
                                 <img src="@Url.Action("Get", "Image", new {imageId = celling.ImageId})" alt="Image" />
                                 <div>
                                     <span>@celling.Description</span>

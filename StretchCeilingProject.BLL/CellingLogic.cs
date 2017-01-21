@@ -64,5 +64,10 @@ namespace StretchCeilingProject.BLL
         {
             return this.CellingDao.GetGroupedByCategory();
         }
+
+        public CellingDescription GetDescription(Guid id)
+        {
+            return this.CellingDao.GetDescription(id);
+        }
     }
 }

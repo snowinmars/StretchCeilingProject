@@ -34,7 +34,7 @@ img {
     white-space: nowrap;
 }
 
-.callme {
+.centred {
     text-align: center;
 }
 
@@ -96,4 +96,11 @@ img {
 
 .examples {
     margin-top: 4ex
+}
+
+.advantages li:before {
+    content: '✔';
+    color: greenyellow;
+    margin-left: -1em; 
+    margin-right: 1em;
 }
