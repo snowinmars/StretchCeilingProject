@@ -28,22 +28,47 @@
         @foreach (var pair in Model)
         {
             <div class="tab-pane active row" id="@pair.Key">
-                @foreach (var celling in pair)
+                @if (pair.Key == CellingCategory.Celling)
                 {
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="celling">
-                            <h3 class="cellingDescription">@celling.Title</h3>
-                            <img src="@Url.Action("Get", "Image", new {imageId = celling.ImageId})" alt="Image" />
-                            <div>
-                                <span>@celling.Description</span>
+                    foreach (var celling in pair)
+                    {
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="celling">
+                                <h3 class="cellingDescription">@celling.Title</h3>
+                                <img src="@Url.Action("Get", "Image", new {imageId = celling.ImageId})" alt="Image" />
+                                <div>
+                                    <span>@celling.Description</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    }
+                }
+
+                @if (pair.Key == CellingCategory.Another)
+                {
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>Наименование</th>
+                            <th>Ед.изм.</th>
+                            <th>Стоимость (₽)</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var celling in pair)
+                        {
+                            <tr>
+                                <td>@celling.Title</td>
+                                <td>@celling.Description</td>
+                                <td>@celling.Cost</td>
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
                 }
 
                 @if (pair.Key == CellingCategory.Celling)
                 {
-
                     <div class="col-xs-12 examples">
                         <h3>Примеры наших работ</h3>
 
