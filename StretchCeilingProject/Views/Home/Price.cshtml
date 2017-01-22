@@ -32,26 +32,6 @@
             }
 
             <div class="tab-pane active row" id="@pair.Key">
-                @*@if (pair.Key == CellingCategory.Celling)
-                {
-                    foreach (var celling in pair)
-                    {
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="celling">
-                                <h3 class="cellingDescription">
-                                    @Html.ActionLink(celling.Title, "Index", "CellingDetails", new {Id = celling.Id}, null)
-                                </h3>
-                                <img src="@Url.Action("Get", "Image", new {imageId = celling.ImageId})" alt="Image" />
-                                <div>
-                                    <span>@celling.Description</span>
-                                </div>
-                            </div>
-                        </div>
-                    }
-                }*@
-                
-                @*<img src="@Url.Action("Get", "Image", new {imageId = "00000000-0000-0000-0000-000000000010"})" alt="Image" />*@
-
                 @if (pair.Key == CellingCategory.Another || 
                     pair.Key == CellingCategory.Construction)
                 {

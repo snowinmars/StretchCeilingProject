@@ -20,7 +20,7 @@ namespace StretchCeilingProject.Common
                 "https://pp.vk.me/c837538/v837538618/1f181/uPiQMv7-Ig0.jpg",
             };
 
-            Constant.AnotherCarouselImagesUrls = new[]
+            Constant.OurWorkImagesUrls = new[]
             {
                 "https://pp.vk.me/c837538/v837538618/1f18e/gtaB_hpAO8k.jpg",
                 "https://pp.vk.me/c837538/v837538618/1f197/aNZ65CvuBrg.jpg",
@@ -33,7 +33,7 @@ namespace StretchCeilingProject.Common
             };
         }
 
-        public static string[] AnotherCarouselImagesUrls { get; set; }
+        public static string[] OurWorkImagesUrls { get; set; }
 
         public const int MaxImageLengthInBytes = 4 * 1024 * 1024; // 4 Mb
         
