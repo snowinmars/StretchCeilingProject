@@ -22,7 +22,9 @@ namespace StretchCeilingProject.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            IEnumerable<IGrouping<CellingCategory, Celling>> goods = this.CellingLogic.GetGroupedByCategory();
+
+            return View(goods);
         }
 
         public ActionResult Price()

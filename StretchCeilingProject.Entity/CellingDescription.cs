@@ -11,13 +11,13 @@ namespace StretchCeilingProject.Entity
         public CellingDescription()
         {
             this.Procs = new List<string>();
-            this.ImageIds = new List<Guid>();
+            this.ImageIds = new List<string>();
         }
 
         public Guid Id { get; set; }
         public string Description { get; set; }
         public IList<string> Procs { get; }
-        public IList<Guid> ImageIds { get; }
+        public IList<string> ImageIds { get; }
 
         public static CellingDescription Empty
         {

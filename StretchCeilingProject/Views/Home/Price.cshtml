@@ -3,23 +3,22 @@
 @model IEnumerable<IGrouping<StretchCeilingProject.Entity.CellingCategory, StretchCeilingProject.Entity.Celling>>
 
 @{
-    ViewBag.Title = "Price";
+    ViewBag.Title = "СтройТрест - натяжные потолки - цены";
+    ViewBag.Description = "СтройТрест Строй Трест - цены на потолки, ремонт потолка в Саратове, заказ потолка";
     Layout = "~/Views/Layouts/DefaultLayout.cshtml";
-
 }
 
 <h2>Price</h2>
 
 <article class="col-xs-12">
-    <span>Наша компания</span>
-
-    <span>Наши преимущества </span>
-
-    <span>Мы предлагаем натяжные потолки:</span>
-
     <ul class="nav nav-tabs cellings" role="tablist" id="myTabExample">
         @foreach (var pair in Model)
         {
+            if (pair.Key == CellingCategory.Celling)
+            {
+                continue;
+            }
+
             <li><a href="#@pair.Key" role="tab" data-toggle="tab">@pair.Key.GetName()</a></li>
         }
     </ul>
@@ -27,8 +26,13 @@
     <div class="tab-content ">
         @foreach (var pair in Model)
         {
+            if (pair.Key == CellingCategory.Celling)
+            {
+                continue;
+            }
+
             <div class="tab-pane active row" id="@pair.Key">
-                @if (pair.Key == CellingCategory.Celling)
+                @*@if (pair.Key == CellingCategory.Celling)
                 {
                     foreach (var celling in pair)
                     {
@@ -44,11 +48,12 @@
                             </div>
                         </div>
                     }
-                }
+                }*@
                 
                 @*<img src="@Url.Action("Get", "Image", new {imageId = "00000000-0000-0000-0000-000000000010"})" alt="Image" />*@
 
-                @if (pair.Key == CellingCategory.Another)
+                @if (pair.Key == CellingCategory.Another || 
+                    pair.Key == CellingCategory.Construction)
                 {
                     <table class="table table-striped">
                         <thead>
@@ -71,19 +76,7 @@
                     </table>
                 }
 
-                @if (pair.Key == CellingCategory.Celling)
-                {
-                    <div class="col-xs-12 examples">
-                        <h3>Наши работы</h3>
-
-                        @foreach (var imageId in Constant.AnotherCarouselImagesIds)
-                        {
-                            <div class="item col-sm-6 col-xs-12">
-                                <img src="@Url.Action("Get", "Image", new {imageId = imageId})" alt="carouselImage">
-                            </div>
-                        }
-                    </div>
-                }
+                
             </div>
 
         }

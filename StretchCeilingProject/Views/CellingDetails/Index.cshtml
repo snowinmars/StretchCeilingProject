@@ -1,7 +1,8 @@
 ﻿@model KeyValuePair<string, StretchCeilingProject.Entity.CellingDescription>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "СтройТрест - натяжные потолки - подробнее о потолке";
+    ViewBag.Description = "СтройТрест Строй Трест - описание потолка, картинки потолка, ремонт в квартире в Саратове";
     Layout = "~/Views/Layouts/DefaultLayout.cshtml";
 }
 
@@ -25,7 +26,7 @@
     {
         <div class="col-md-4 col-sm-6 col-xs-12">
             <div class="celling">
-                <img src="@Url.Action("Get", "Image", new {imageId = imageId})" alt="Image" />
+                <img src="@imageId" alt="Image" />
             </div>
         </div>
     }

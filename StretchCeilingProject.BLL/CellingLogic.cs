@@ -30,7 +30,7 @@ namespace StretchCeilingProject.BLL
         private bool IsValidImage(Celling item)
         {
             if (item.Id == default(Guid) ||
-                item.ImageId == default(Guid) ||
+                string.IsNullOrWhiteSpace(item.ImageUrl) ||
                 string.IsNullOrWhiteSpace(item.Cost) ||
                 string.IsNullOrWhiteSpace(item.Title))
             {

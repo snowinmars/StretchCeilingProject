@@ -21,7 +21,7 @@ namespace StretchCeilingProject.DAL
 
             using (var sqlConnection = new SqlConnection(Constant.ConnectionString))
             {
-                sqlConnection.Query<Image>(CellingDao.InsertCommand, param: new { item.Id, item.ImageId, item.Cost, Description = item.Title });
+                sqlConnection.Query<Image>(CellingDao.InsertCommand, param: new { item.Id, item.ImageUrl, item.Cost, Description = item.Title });
             }
         }
 
@@ -29,7 +29,7 @@ namespace StretchCeilingProject.DAL
 insert into
 [dbo].[Celling] (
     [Id]
-    , [ImageId]
+    , [ImageUrl]
     , [Cost]
     , [Title]
     , [Category]
@@ -37,7 +37,7 @@ insert into
     )
 values (
     @id
-    , @imageId
+    , @imageUrl
     , @cost
     , @title
     , @category
@@ -47,7 +47,7 @@ values (
         private const string SelectCommand = @"
 select
     [Id]
-    , [ImageId]
+    , [ImageUrl]
     , [Cost]
     , [Title]
     , [Category]
@@ -60,7 +60,7 @@ where
         private const string SelectAllComand = @"
 select
     [Id]
-    , [ImageId]
+    , [ImageUrl]
     , [Cost]
     , [Title]
     , [Category]
@@ -72,7 +72,7 @@ from
 select 
     [Id]
     , [Procs]
-    , [ImageIds]
+    , [ImageUrls]
     , [Description]
 from
     [dbo].[CellingDescription]
@@ -144,16 +144,16 @@ where
                     };
 
                     IEnumerable<string> procs = JsonConvert.DeserializeObject<IEnumerable<string>>(tmp.Procs);
-                    IEnumerable<Guid> imageIds = JsonConvert.DeserializeObject<IEnumerable<Guid>>(tmp.ImageIds);
+                    IEnumerable<string> imageUrls = JsonConvert.DeserializeObject<IEnumerable<string>>(tmp.ImageUrls);
 
                     foreach (var proc in procs)
                     {
                         c.Procs.Add(proc);
                     }
 
-                    foreach (var imageId in imageIds)
+                    foreach (var imageUrl in imageUrls)
                     {
-                        c.ImageIds.Add(imageId);
+                        c.ImageIds.Add(imageUrl);
                     }
 
                     return c;
@@ -169,6 +169,6 @@ where
         public Guid Id { get; set; }
         public string Description { get; set; }
         public string Procs { get; set; }
-        public string ImageIds { get; set; }
+        public string ImageUrls { get; set; }
     }
 }

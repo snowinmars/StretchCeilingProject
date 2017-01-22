@@ -270,6 +270,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\colorTheme.css" />
     <Content Include="Content\commonStyleSheet.css" />
+    <Content Include="googlebf95b2c7e0e7968b.html" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -282,11 +283,13 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Properties\PublishProfiles\stroytrest - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="robots.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\commonJavaScript.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="sitemap.xml" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

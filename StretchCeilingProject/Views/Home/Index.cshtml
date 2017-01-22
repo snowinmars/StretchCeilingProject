@@ -1,15 +1,18 @@
 ﻿@using StretchCeilingProject.Common
+@using StretchCeilingProject.Entity
+@model IEnumerable<IGrouping<CellingCategory, Celling>>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "СтройТрест - натяжные потолки";
+    ViewBag.Description = "СтройТрест Строй Трест - продажа натяжных потолков, создание натяжных потолков, заказать потолок, ремонт квартиры в Саратове, главная страница";
     Layout = "~/Views/Layouts/DefaultLayout.cshtml";
 }
 
 <article class="col-xs-12">
     <h2 class="centred">Натяжные потолки в Саратове и Энгельсе.</h2>
-    
+
     <p>Наша компания предлагает услуги по монтажу натяжных потолков известных европейских и отечественных производителей в Саратове, Энгельсе и области. У нас вы найдете широчайший ассортимент.</p>
     <p>Трудно сделать выбор? Наши специалисты помогут, детально рассказав о достоинствах и особенностях каждого материала, фактуры, цветовой гаммы.</p>
-    
+
     <h3>Наши основные преимущества:</h3>
     <ul class="advantages">
         <li>Минимальные сроки изготовления заказа</li>
@@ -22,3 +25,37 @@
     </ul>
 </article>
 
+@foreach (var pair in Model)
+{
+    if (pair.Key == CellingCategory.Celling)
+    {
+        foreach (var celling in pair)
+        {
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="celling">
+                    <h3 class="cellingDescription">
+                        @Html.ActionLink(celling.Title, "Index", "CellingDetails", new { Id = celling.Id }, null)
+                    </h3>
+                    <img src="@celling.ImageUrl" alt="Image" />
+                    <div>
+                        <span>@celling.Description</span>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+
+    if (pair.Key == CellingCategory.Celling)
+    {
+        <div class="col-xs-12 examples">
+            <h3>Наши работы</h3>
+
+            @foreach (var imageUrl in Constant.AnotherCarouselImagesUrls)
+            {
+                <div class="item col-sm-6 col-xs-12">
+                    <img src="@imageUrl" alt="carouselImage">
+                </div>
+            }
+        </div>
+    }
+}

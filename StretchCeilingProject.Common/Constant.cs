@@ -8,33 +8,32 @@ namespace StretchCeilingProject.Common
     {
         public const string MIMEType = "image/png";
 
-        public static IEnumerable<Guid> CarouselImagesIds;
+        public static IEnumerable<string> CarouselImagesUrls;
 
         static Constant()
         {
-            Constant.CarouselImagesIds = new[]
+            Constant.CarouselImagesUrls = new[]
             {
-                new Guid(0,0,0,0,0,0,0,0,0,0,11),
-                new Guid(0,0,0,0,0,0,0,0,0,0,12),
-                new Guid(0,0,0,0,0,0,0,0,0,0,13),
-                new Guid(0,0,0,0,0,0,0,0,0,0,14),
+                "https://pp.vk.me/c837538/v837538618/1f165/yViUFF64HAA.jpg",
+                "https://pp.vk.me/c837538/v837538618/1f16e/W7AyMKoWJ3k.jpg",
+                "https://pp.vk.me/c837538/v837538618/1f178/4PRxqDjg5ro.jpg",
+                "https://pp.vk.me/c837538/v837538618/1f181/uPiQMv7-Ig0.jpg",
             };
 
-            Constant.AnotherCarouselImagesIds = new[]
+            Constant.AnotherCarouselImagesUrls = new[]
             {
-                new Guid(0,0,0,0,0,0,0,0,0,0,2),
-                new Guid(0,0,0,0,0,0,0,0,0,0,3),
-                new Guid(0,0,0,0,0,0,0,0,0,0,4),
-                new Guid(0,0,0,0,0,0,0,0,0,0,5),
-                new Guid(0,0,0,0,0,0,0,0,0,0,6),
-                new Guid(0,0,0,0,0,0,0,0,0,0,7),
-                new Guid(0,0,0,0,0,0,0,0,0,0,8),
-                new Guid(0,0,0,0,0,0,0,0,0,0,9),
-
+                "https://pp.vk.me/c837538/v837538618/1f18e/gtaB_hpAO8k.jpg",
+                "https://pp.vk.me/c837538/v837538618/1f197/aNZ65CvuBrg.jpg",
+                "https://pp.vk.me/c837538/v837538618/1f1a0/7ZPA9chiGUY.jpg",
+                "https://pp.vk.me/c837538/v837538618/1f1a9/YCtxjqox5t4.jpg",
+                "https://pp.vk.me/c837538/v837538618/1f1b2/7_6hkq8E9Kw.jpg",
+                "https://pp.vk.me/c837538/v837538618/1f1bb/kY6hO5iOKg0.jpg",
+                "https://pp.vk.me/c837538/v837538618/1f1c4/Uswr4Oe86vc.jpg",
+                "https://pp.vk.me/c837538/v837538618/1f1cd/NREZuW8LqMg.jpg",
             };
         }
 
-        public static Guid[] AnotherCarouselImagesIds { get; set; }
+        public static string[] AnotherCarouselImagesUrls { get; set; }
 
         public const int MaxImageLengthInBytes = 4 * 1024 * 1024; // 4 Mb
         
