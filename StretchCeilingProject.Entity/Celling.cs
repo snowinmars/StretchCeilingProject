@@ -17,6 +17,8 @@ namespace StretchCeilingProject.Entity
                 ImageUrl = string.Empty,
                 Cost = string.Empty,
                 Title = string.Empty,
+                Description = string.Empty,
+                Category = CellingCategory.None,
             };
         }
 

@@ -8,7 +8,7 @@ namespace StretchCeilingProject.Controllers
 {
     public class ErrorController : Controller
     {
-        public ActionResult Error()
+        public ActionResult Index()
         {
             Response.StatusCode = 400;
             return View();
@@ -16,7 +16,7 @@ namespace StretchCeilingProject.Controllers
 
         public ActionResult Error404()
         {
-            Response.StatusCode = 404;
+            Response.StatusCode = 404; 
             return View();
         }
     }
