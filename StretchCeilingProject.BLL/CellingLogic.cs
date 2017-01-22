@@ -62,7 +62,7 @@ namespace StretchCeilingProject.BLL
 
         public IEnumerable<IGrouping<CellingCategory, Celling>> GetGroupedByCategory()
         {
-            return this.CellingDao.GetGroupedByCategory();
+            return this.CellingDao.GetGroupedByCategory().ToList();
         }
 
         public CellingDescription GetDescription(Guid id)
