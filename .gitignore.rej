@@ -1,0 +1,10 @@
+diff a/.gitignore b/.gitignore	(rejected hunks)
+@@ -10,6 +10,8 @@
+ 
+ TestResults
+ 
++\StretchCeilingProject\Web.Release.config
++
+ # Windows Installer files
+ *.cab
+ *.msi
