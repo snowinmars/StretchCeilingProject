@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using Newtonsoft.Json;
 using SandS.Algorithm.Extensions.EnumerableExtensionNamespace;
 using StretchCeilingProject.Common;
 using StretchCeilingProject.Entity;
@@ -6,7 +7,6 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
-using Newtonsoft.Json;
 
 namespace StretchCeilingProject.DAL
 {
@@ -69,7 +69,7 @@ from
     [dbo].[Celling]";
 
         private const string SelectDescriptionCommand = @"
-select 
+select
     [Id]
     , [Procs]
     , [ImageUrls]
@@ -79,7 +79,6 @@ from
 where
     [Id] = @id
 ";
-
 
         private bool IsValidImage(Celling item)
         {

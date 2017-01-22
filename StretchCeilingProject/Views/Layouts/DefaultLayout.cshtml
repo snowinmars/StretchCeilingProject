@@ -5,7 +5,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="yandex-verification" content="e68c1e91130def8e" />
-    <meta name="description" content="@ViewBag.Description"/>
+    <meta name="description" content="@ViewBag.Description" />
     <title>@ViewBag.Title</title>
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
@@ -47,47 +47,47 @@
         </nav>
     </header>
 
-<div class="col-lg-8 col-lg-offset-2 col-md-12 hidden-xs clearfix">
-    
-    <h1 class="marquee"><span>НАТЯЖНЫЕ ПОТОЛКИ от 250 кв.м</span></h1>
+    <div class="col-lg-8 col-lg-offset-2 col-md-12 hidden-xs clearfix">
 
-    <div id="myCarousel" class="carousel" data-rimageIde="carousel">
-        <!-- Wrapper for slimageIdes -->
-        <div class="carousel-inner" role="listbox">
+        <h1 class="marquee"><span>НАТЯЖНЫЕ ПОТОЛКИ от 250 кв.м</span></h1>
 
-            @foreach (var imageUrl in Constant.CarouselImagesUrls)
+        <div id="myCarousel" class="carousel" data-rimageIde="carousel">
+            <!-- Wrapper for slimageIdes -->
+            <div class="carousel-inner" role="listbox">
+
+                @foreach (var imageUrl in Constant.CarouselImagesUrls)
             {
-                <div class="item col-xs-6 col-xs-offset-3">
-                    <img src="@imageUrl" alt="carouselImage">
-                </div>
-            }
+                    <div class="item col-xs-6 col-xs-offset-3">
+                        <img src="@imageUrl" alt="carouselImage">
+                    </div>
+                }
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slimageIde="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-himageIdden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slimageIde="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-himageIdden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
-
-        <!-- Left and right controls -->
-        <a class="left carousel-control" href="#myCarousel" role="button" data-slimageIde="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-himageIdden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-
-        <a class="right carousel-control" href="#myCarousel" role="button" data-slimageIde="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-himageIdden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
     </div>
-</div>
 
-<article class="col-lg-8 col-lg-offset-2 col-md-12 clearfix">
-    @RenderBody()
-</article>
-    
-        @*@using (Html.BeginForm("Add", "Image", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    <article class="col-lg-8 col-lg-offset-2 col-md-12 clearfix">
+        @RenderBody()
+    </article>
+
+    @*@using (Html.BeginForm("Add", "Image", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
             <input type="file" name="file" />
 
             <input type="submit" value="Go" />
         }*@
 
-<script src="~/Scripts/jquery-1.9.1.min.js"></script>
+    <script src="~/Scripts/jquery-1.9.1.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Scripts/commonJavaScript.js"></script>
 </body>

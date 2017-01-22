@@ -41,7 +41,7 @@ where
 
             using (SqlConnection sqlConnection = new SqlConnection(Constant.ConnectionString))
             {
-                sqlConnection.Query<Image>(ImageDao.InsertCommand, param: new { item.Id, item.Content, date=DateTime.Now.ToLongTimeString() });
+                sqlConnection.Query<Image>(ImageDao.InsertCommand, param: new { item.Id, item.Content, date = DateTime.Now.ToLongTimeString() });
             }
         }
 

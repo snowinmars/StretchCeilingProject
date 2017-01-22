@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Configuration;
 
 namespace StretchCeilingProject.Common
@@ -36,7 +35,7 @@ namespace StretchCeilingProject.Common
         public static string[] OurWorkImagesUrls { get; set; }
 
         public const int MaxImageLengthInBytes = 4 * 1024 * 1024; // 4 Mb
-        
+
         public static readonly string ConnectionString = ConfigurationManager.ConnectionStrings["defaultDatabaseConnectionString"].ConnectionString;
     }
 }
