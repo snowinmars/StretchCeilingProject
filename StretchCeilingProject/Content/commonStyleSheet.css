@@ -6,7 +6,6 @@
     left: 0;
     bottom: 0;
     right: 0;
-    box-sizing: border-box;
 }
 
 .mainMenu {
@@ -16,6 +15,8 @@
 
 .carousel {
     margin-bottom: 4ex;
+    max-height: 350px;
+    overflow: hidden;
 }
 
 img {
@@ -23,15 +24,90 @@ img {
     max-height: 100%;
 }
 
-.celling {  
-    margin-bottom: 1ex;
-    padding: 1ex;
+.celling {
+    width: 96%;
+    height: 300px;
+    min-height: 150px;
+    max-height: 300px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 15px;
+}
+
+.cellingCost {
+    text-align: right;
+    margin-top: auto;
+}
+
+    .cellingCost > span {
+        display: inline-block;
+        padding: 1ex;
+        font-size: 3ex;
+        background-color: #353737;
+    }
+
+.two-lines-max {
+    display: inline-block; /* or inline-block */
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-height: 3.6em;
+    line-height: 1.8em;
+}
+
+.cellingTitle {
+    flex-grow: 1;
+}
+
+.one-line-max {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-wrap: none;
 }
 
 .cellingDescription {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    background-color: #353737;
+}
+
+.cellingDescription .moredots {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding-right: 10px;
+    padding-left: 100px;
+    background: linear-gradient(to top left, rgba(35,37,37,0.9) 20%,rgba(35,37,37,0) 60%);
+}
+    .cellingDescription .moredots .tip {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        opacity:0;
+
+        background: linear-gradient(to top left, rgba(35,37,37,0.9) 30%,rgba(35,37,37,0) 60%);
+
+        text-align: right;
+
+        display: inline-block;
+        padding-left: 16ex;
+        padding-right: 2ex;
+        padding-top: 3.6em;
+
+        -webkit-transition:all 0.5s ease-in-out;
+        -moz-transition:all 0.5s ease-in-out;
+        -o-transition:all 0.5s ease-in-out;
+        -ms-transition:all 0.5s ease-in-out;
+        transition:all 0.5s ease-in-out;
+
+    }
+
+    .cellingDescription .moredots:hover .tip {
+        opacity:0.95;
+    }
+
+.spaceFlex {
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
 
 .centred {
@@ -51,9 +127,10 @@ img {
         -webkit-transform: translate(0, 0);
         transform: translate(0, 0);
     }
+
     100% {
         -webkit-transform: translate(-100%, 0);
-        transform: translate(-100%, 0)
+        transform: translate(-100%, 0);
     }
 }
 
@@ -62,22 +139,22 @@ img {
         -moz-transform: translate(0, 0);
         transform: translate(0, 0);
     }
+
     100% {
         -moz-transform: translate(-100%, 0);
-        transform: translate(-100%, 0)
+        transform: translate(-100%, 0);
     }
 }
-
 
 @keyframes scroll {
     0% {
         transform: translate(0, 0);
     }
+
     100% {
-        transform: translate(-100%, 0)
+        transform: translate(-100%, 0);
     }
 }
-
 
 .marquee {
     display: block;
@@ -86,29 +163,26 @@ img {
     overflow: hidden;
 }
 
-.marquee span {
-    display: inline-block;
-    padding-left: 100%;
-    -webkit-animation: scroll 5s infinite linear;
-    -moz-animation: scroll 5s infinite linear;
-    animation: scroll 5s infinite linear;
-}
+    .marquee span {
+        display: inline-block;
+        padding-left: 100%;
+        -webkit-animation: scroll 5s infinite linear;
+        -moz-animation: scroll 5s infinite linear;
+        animation: scroll 5s infinite linear;
+    }
 
 .examples {
-    margin-top: 4ex
+    margin-top: 4ex;
 }
 
 .advantages li:before {
     content: '✔';
     color: greenyellow;
-    margin-left: -1em; 
+    margin-left: -1em;
     margin-right: 1em;
 }
 
 .cellingDescriptionAsd {
     font-size: 4ex;
     font-weight: bold;
-}
-
-.cellingDescriptionTitle {
 }
