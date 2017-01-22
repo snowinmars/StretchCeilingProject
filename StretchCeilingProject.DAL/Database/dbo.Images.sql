@@ -1,6 +1,0 @@
-﻿CREATE TABLE [dbo].[Images] (
-    [Id]      UNIQUEIDENTIFIER NOT NULL,
-    [Content] VARBINARY (MAX) NOT NULL,
-    PRIMARY KEY CLUSTERED ([Id] ASC)
-);
-
