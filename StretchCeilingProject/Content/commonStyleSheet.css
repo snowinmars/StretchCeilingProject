@@ -31,7 +31,7 @@ img {
     max-height: 300px;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top;
     margin-bottom: 15px;
 }
 
